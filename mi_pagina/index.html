@@ -20,7 +20,9 @@ p{
 </head>
 <body>
     <h1>Contador Epico de Final de I-Semetre-2026🚀🤔</h1>
-    <img src="1200px-Firma_vertical_Universidad_de_Costa_Rica.svg_.png" width="300">
+
+    <img src="images/1200px-Firma_vertical_Universidad_de_Costa_Rica.svg_.png" width="300">
+
     <p id="Fecha"></p>
     <p id="Faltan"></p>
     <p id="Completados"></p>
@@ -42,7 +44,7 @@ p{
         const Porcentaje = ((pasado/total)* 100).toFixed(2);
 
         document.getElementById("Fecha").innerHTML = "Hoy: " + hoy.toLocaleDateString();
-        document.getElementById("Faltan").innerHTML = "Faltan: " + dias_restantes.toLocaleString();
+        document.getElementById("Faltan").innerHTML = "Faltan: " + dias_restantes + "dias";
         document.getElementById("Completados").innerHTML = "Completados: " + dias_pasados;
         document.getElementById("Porcentaje").innerHTML = " Semestre completado: " + Porcentaje + "%";
 
