@@ -31,7 +31,8 @@ p{
     <p id="Faltan"></p>
     <p id="Completados"></p>
     <p id="Porcentaje"></p>
-
+    <img src ="https://media.gifdb.com/papa-s-pizzeria-let-him-cook-that-2w5s0da2ov8821w5.gif" width="400">
+    
     <script> //Codigo JavaScript
     const inicio = new Date("2026-03-09");
     const fin = new Date("2026-07-04");
@@ -48,8 +49,8 @@ p{
         const Porcentaje = ((pasado/total)* 100).toFixed(2);
 
         document.getElementById("Fecha").innerHTML = "Hoy: " + hoy.toLocaleDateString();
-        document.getElementById("Faltan").innerHTML = "Faltan: " + dias_restantes + "dias";
-        document.getElementById("Completados").innerHTML = "Completados: " + dias_pasados;
+        document.getElementById("Faltan").innerHTML = "Faltan: " + dias_restantes + " dias";
+        document.getElementById("Completados").innerHTML = "Completados: " + dias_pasados + " dias";
         document.getElementById("Porcentaje").innerHTML = " Semestre completado: " + Porcentaje + "%";
 
     }
