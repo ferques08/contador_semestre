@@ -1,14 +1,17 @@
+<!-- Copyright 2026 Fernando Josue Quesada Araya -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+<!-- Lenguaje del la pagina, en este caso español. -->
 <head>
 <meta charset="UTF-8">
-<title>Contador de thegref</title>
-
+<title>Contador de Semestre</title>
 <style>
 body {
+    
     font-family: Arial;
     text-align: center;
     margin-top: 50px;
+    
 }
 h1{
     font-size: 40px;
@@ -20,22 +23,25 @@ p{
 </head>
 <body>
     <h1>Contador Epico de Final de I-Semetre-2026🚀🤔</h1>
-
+    <!--Muestra la imagen de el logo de la universidad, con tamaño 250px y centrada (style="display:block; margin:auto;")-->
     <img 
     src="images/1200px-Firma_vertical_Universidad_de_Costa_Rica.svg_.png" 
     width="250"
     style="display:block; margin:auto;"
     >
-
+    <!--Se crean 4 parrafos que estan vacios, luego con javascript se llenan dinamicamente-->
     <p id="Fecha"></p>
     <p id="Faltan"></p>
     <p id="Completados"></p>
     <p id="Porcentaje"></p>
+    <!--Gif puesto con url directa de Giphy-->
     <img src ="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExaWk0cHl0aHJqMHhid2cxczJnbDQ5cGRtNDVlMmJnODR1c3EyazdoZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/kCpg2FYkENfnuvXSsS/giphy.gif" width="400">
 
     <script> //Codigo JavaScript
+    // Se definen las fechas de inicio y fin del semestre
     const inicio = new Date("2026-03-09");
     const fin = new Date("2026-07-04");
+    // Se crea la funcion actualizar, que se encarga de calcular los dias pasados, restantes y el porcentaje completado del semestre, y luego actualiza el contenido de los parrafos con los resultados.
     function actualizar(){
         const hoy = new Date();
         const total = fin - inicio;
@@ -45,20 +51,20 @@ p{
         const restante = fin - hoy;
         // cuanto nos falta
         const dias_pasados = Math.floor(pasado/(1000*60*60*24));
+        // Math.floor se utiliza para redondear hacia abajo el resultado de la division, que nos da el numero de dias completos que han pasado.
         const dias_restantes = Math.floor(restante/(1000*60*60*24));
         const Porcentaje = ((pasado/total)* 100).toFixed(2);
-
-        document.getElementById("Fecha").innerHTML = "Hoy: " + hoy.toLocaleDateString();
+        // document.getElementById se usa para acceder a los elementos del HTML por su id, y luego se actualiza su contenido con innerHTML.
         document.getElementById("Faltan").innerHTML = "Faltan: " + dias_restantes + " dias";
         document.getElementById("Completados").innerHTML = "Completados: " + dias_pasados + " dias";
         document.getElementById("Porcentaje").innerHTML = " Semestre completado: " + Porcentaje + "%";
 
     }
+    // Se llama a la funcion actualizar una vez al cargar la pagina, y luego se establece un intervalo para que se actualice cada segundo (1000 milisegundos).
     actualizar();
     setInterval(actualizar, 1000);
     </script>
 </body>
-
 </html>
 
 
