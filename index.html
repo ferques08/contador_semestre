@@ -11,7 +11,8 @@ body {
     font-family: Arial;
     text-align: center;
     margin-top: 50px;
-    
+    background: linear-gradient(135deg, #f5f7fa, #cae0fb);
+    color: #2c3e50;
 }
 h1{
     font-size: 40px;
@@ -55,6 +56,7 @@ p{
         const dias_restantes = Math.floor(restante/(1000*60*60*24));
         const Porcentaje = ((pasado/total)* 100).toFixed(2);
         // document.getElementById se usa para acceder a los elementos del HTML por su id, y luego se actualiza su contenido con innerHTML.
+        document.getElementById("Fecha").innerHTML = "Fecha actual: " + hoy.toLocaleDateString();
         document.getElementById("Faltan").innerHTML = "Faltan: " + dias_restantes + " dias";
         document.getElementById("Completados").innerHTML = "Completados: " + dias_pasados + " dias";
         document.getElementById("Porcentaje").innerHTML = " Semestre completado: " + Porcentaje + "%";
