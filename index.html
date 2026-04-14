@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Contador de thegref</title>
+
+<style>
+body {
+    font-family: Arial;
+    text-align: center;
+    margin-top: 50px;
+}
+h1{
+    font-size: 40px;
+}
+p{
+    font-size: 24px;
+}
+</style>
+</head>
+<body>
+    <h1>Contador Epico de Final de I-Semetre-2026🚀🤔</h1>
+
+    <p id="Fecha"></p>
+    <p id="Faltan"></p>
+    <p id="Completados"></p>
+    <p id="Porcentaje"></p>
+
+    <script> //Codigo JavaScript
+    const inicio = new Date("2026-03-09");
+    const fin = new Date("2026-07-04");
+    function actualizar(){
+        const hoy = new Date();
+        const total = fin - inicio;
+        // Todos los dias del curso
+        const pasado = hoy - inicio;
+        // dias que llevamos
+        const restante = fin - hoy;
+        // cuanto nos falta
+        const dias_pasados = Math.floor(pasado/(1000*60*60*24));
+        const dias_restantes = Math.floor(restante/(1000*60*60*24));
+        const Porcentaje = ((pasado/total)* 100).toFixed(2);
+
+        document.getElementById("Fecha").innerHTML = "Hoy: " + hoy.toLocaleDateString();
+        document.getElementById("Faltan").innerHTML = "Faltan: " + dias_restantes.toLocaleString();
+        document.getElementById("Completados").innerHTML = "Completados: " + dias_pasados;
+        document.getElementById("Porcentaje").innerHTML = " Semestre completado: " + Porcentaje + "%";
+
+    }
+    actualizar();
+    setInterval(actualizar, 1000);
+    </script>
+</body>
+
+</html>
+
+
+
