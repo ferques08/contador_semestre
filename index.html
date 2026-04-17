@@ -70,7 +70,7 @@ p{
         const segundos = Math.floor((restante % (1000 * 60)) / 1000);
         // Math.floor se utiliza para redondear hacia abajo el resultado de la division, que nos da el numero de dias completos que han pasado.
         const dias_restantes = Math.floor(restante/(1000*60*60*24));
-        const Porcentaje = ((pasado/total)* 100).toFixed(4);
+        const Porcentaje = ((pasado/total)* 100).toFixed(25);
         // document.getElementById se usa para acceder a los elementos del HTML por su id, y luego se actualiza su contenido con innerHTML.
         document.getElementById("Fecha").innerHTML = "Fecha actual: " + hoy.toLocaleDateString();
         document.getElementById("Faltan").innerHTML = "Faltan: " + dias_restantes + " dias " + horas + " horas " + minutos + " minutos " + segundos + " segundos";
